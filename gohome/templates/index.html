@@ -67,7 +67,7 @@ function deleteOverlays() {
 }
 
 function addKmlLayer(serv_no,serv_dir) {
-    kmlLayer = new google.maps.KmlLayer('http://publictransport.sg/kml/busroutes/'+serv_no+'-'+serv_dir+'.kml');
+    kmlLayer = new google.maps.KmlLayer('http://mytransport.sg/kml/busroutes/'+serv_no+'-'+serv_dir+'.kml');
     kmlLayer.setMap(map);
     kmlLayersArray.push(kmlLayer);
 }
@@ -86,6 +86,7 @@ $(document).ready(function(){
         var bus_service = $("#busservice_option").val();
         if (bus_service != "default")
         {
+            console.log(bus_service);
             addKmlLayer(bus_service.split("_")[0],bus_service.split("_")[1]);
         }
     });

@@ -33,12 +33,4 @@ class MainHandler(BaseHandler):
         self.render_response('index.html', **context)
 
 
-app = webapp2.WSGIApplication([('/', MainHandler)],
-                                         debug=True)
-
-def main():
-    app.run()
-
-
-if __name__ == '__main__':
-    main()
+app = webapp2.WSGIApplication([('/', MainHandler)])
