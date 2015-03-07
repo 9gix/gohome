@@ -1,76 +1,49 @@
 {% extends 'base.html' %}
 {% block head %}
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-<style type="text/css">
-    html { height: 100% }
-    body { height: 100%; margin: 0; padding: 0 }
-    #map { height: 90% }
-</style>
-<script type="text/javascript"
-    src="http://maps.googleapis.com/maps/api/js?key={{ API_KEY }}&sensor=false">
-</script>
-<script src="/js/jquery-1.7.1.min.js"></script>
-<script src="/js/main.js"></script>
-<style>
-#contextMenu {
-	position: absolute;
-	min-width: 100px;
-	z-index: 1000;
-	background: #fff;
-	border-top: solid 1px #CCC;
-	border-left: solid 1px #CCC;
-	border-bottom: solid 1px #676767;
-	border-right: solid 1px #676767;
-	padding: 0px;
-	margin: 0px;
-	display:none;
-}
-
-#contextMenu a {
-	color: #000;
-	text-decoration: none;
-	display: block;
-	line-height: 22px;
-	height: 22px;
-	padding: 1px 10px;
-}
-
-#contextMenu li {
-	list-style: none;
-	padding: 1px;
-	margin: 0px;
-}
-
-#contextMenu li.hover a {
-	background-color: #A7C4FA;
-}
-
-#contextMenu li.separator {
-	border-top: solid 1px #ccc;
-}
-</style>
 {% endblock %}
-{% block body %}
-<div id="banner">
-<h1>Bus Service Visualizer</h1>
-<p>Visuallize all bus services available near your home or your workplace.
-Reduce MRT Congestion and use Bus instead.
-Simply by adding all bus services no at your destination stop,
-and look for possible bus service</p>
-</div>
-<div id="filter" style="width:19%; float:left;">
-{% include 'bus_services.html' %}
-<button type="button" id="add_route">Add</button><br />
-<button type="button" id="clear_route">Clear Route</button><br />
-<button type="button" id="reset_marker">Reset Marker</button><br />
-<a href="https://sites.google.com/site/yeoeugeneoey/contact">Support</a>
-</div>
-<div id="map" style="width:60%; height:80%;"></div>
 
-<ul id="contextMenu">
-    <li><a href="#markHere">Mark here</a></li>
-	<li><a href="#zoomIn">Zoom in</a></li>
-	<li><a href="#zoomOut">Zoom out</a></li>
-	<li><a href="#centerHere">Center map here</a></li>
-</ul>
+{% block style %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/main.css" />
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <header>
+        <h1 class="page-header">Bus Service Visualizer</h1>
+    </header>
+
+    <div class="row">
+        <div class="col-sm-3">
+            {% include 'bus_services.html' %}
+
+            <button type="button" id="add_route" class="btn-block btn btn-primary">Add</button>
+            <button type="button" id="clear_route" class="btn-block btn btn-danger">Clear Route</button>
+            <button type="button" id="reset_marker" class="btn-block btn btn-danger">Reset Marker</button>
+
+        </div>
+        <div class="col-sm-9">
+            <div id="map"></div>
+
+            <ul id="contextMenu">
+                <li><a href="#markHere">Mark here</a></li>
+            	<li><a href="#zoomIn">Zoom in</a></li>
+            	<li><a href="#zoomOut">Zoom out</a></li>
+            	<li><a href="#centerHere">Center map here</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <a href="https://9gix.github.io/">by Eugene @9gix</a>
+</footer>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key={{ API_KEY }}&sensor=false"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
 {% endblock %}

@@ -1,0 +1,40 @@
+html { height: 100% }
+body { height: 100%; margin: 0; padding: 0 }
+#map { height: 500px; }
+
+#contextMenu {
+    position: absolute;
+    min-width: 100px;
+    z-index: 1000;
+    background: #fff;
+    border-top: solid 1px #CCC;
+    border-left: solid 1px #CCC;
+    border-bottom: solid 1px #676767;
+    border-right: solid 1px #676767;
+    padding: 0px;
+    margin: 0px;
+    display:none;
+}
+
+#contextMenu a {
+    color: #000;
+    text-decoration: none;
+    display: block;
+    line-height: 22px;
+    height: 22px;
+    padding: 1px 10px;
+}
+
+#contextMenu li {
+    list-style: none;
+    padding: 1px;
+    margin: 0px;
+}
+
+#contextMenu li.hover a {
+    background-color: #A7C4FA;
+}
+
+#contextMenu li.separator {
+    border-top: solid 1px #ccc;
+}
