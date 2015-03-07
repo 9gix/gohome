@@ -27,8 +27,6 @@ class MainHandler(BaseHandler):
     def get(self):
         context = {
             'API_KEY': 'AIzaSyAWT-4e0uWKB4LFa-wWXJCWKNQ2lPk_aEs',
-            'coordinate':{'lat':1.35188,'lng':103.820114},
-            'zoom':11
         }
         self.render_response('index.html', **context)
 
