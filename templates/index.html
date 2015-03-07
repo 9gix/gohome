@@ -10,10 +10,20 @@
 
 {% block body %}
 <div class="container-fluid">
-    <header>
-        <h1 class="page-header">Bus Service Visualizer</h1>
-    </header>
 
+        
+    <header class="banner">
+
+        <nav class="nav nav-pills pull-right">
+          <li><a href="" data-toggle="modal" data-target="#guide">Guide</a></li>
+          <li><a href="https://github.com/9gix/gohome/issues">Report Bug</a></li>
+          <li><a href="http://9gix.github.io/">Contact</a></li>
+        </nav>
+
+        <h1 class="brand">Bus Service Visualizer</h1>
+        
+        
+    </header>
     <div class="row">
         <div class="col-sm-3">
             {% include 'bus_services.html' %}
@@ -21,7 +31,7 @@
             <button type="button" id="add_route" class="btn-block btn btn-primary">Add</button>
             <button type="button" id="clear_route" class="btn-block btn btn-danger">Clear Route</button>
             <button type="button" id="reset_marker" class="btn-block btn btn-danger">Reset Marker</button>
-
+            <p><small>Last Updated: 8 March 2015</small></p>
         </div>
         <div class="col-sm-9">
             <div id="map"></div>
@@ -36,9 +46,69 @@
     </div>
 </div>
 
-<footer>
-    <a href="https://9gix.github.io/">by Eugene @9gix</a>
-</footer>
+
+
+
+
+
+
+<div class="modal fade" id="guide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Guide</h4>
+      </div>
+      <div class="modal-body">
+        <p>
+        This app helps you to <strong>visualize the bus service route</strong> from the start to the end.
+        </p>
+        <p>
+        In some cases, you may want to take a <strong>tour around Singapore via public buses.</strong> :)
+        Instead of taking tour guided bus, you can now take public buses and know where the bus is heading to.
+        With this, you are mostlikely prefer to explore rather than going to a particular location.
+        Moreover, I believe this is a better way of exploring around Singapore streets. :)
+        </p>
+        <p>
+        <strong>Finding strategic location for your property.</strong> For example, you may want to visualize all buses near your location.
+        This allows you to know what's the coverage of your property if you were to travel by bus.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<div class="modal fade" id="guide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Guide</h4>
+      </div>
+      <div class="modal-body">
+        <p>
+        Often the case that you are on the bus, but you are not sure all of the endpoints. 
+        This app helps you to visualize from the start and end of the bus service route.
+        </p>
+
+        <p>
+        In some cases, you may want to take a tour around Singapore via public buses. :)
+        Instead of taking tour guided bus, you can now take public buses and know where the bus is heading to.
+        With this, you are mostlikely prefer to explore rather than going to a particular location.
+        This might be the better way of exploring around Singapore streets. :)
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 {% endblock %}
 
 {% block script %}
